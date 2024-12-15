@@ -1,0 +1,37 @@
+import java.util.*;
+class B{
+    public void f(){
+       Scanner i = new Scanner(System.in);
+       LinkedList<Integer> a = new LinkedList<Integer>();
+       System.out.print("Eter how many numbers do you want to add : ");
+       int b = i.nextInt();
+       for(int j=0;j<b;j++){
+           System.out.print("enter element : ");
+           int c = i.nextInt();
+           a.add(c);
+           
+       }
+       System.out.println(a);
+    }
+}
+
+
+public class Main extends B implements Runnable{
+    public static void main(String args[]){
+        Main o1 = new Main();
+        Thread t = new Thread(o1);
+        t.start();
+        while(t.isAlive()){
+            
+        }
+        o1.f();
+    }
+    public void run(){
+        Scanner i = new Scanner(System.in);
+        System.out.print("Enter a number : ");
+        int a = i.nextInt();
+        for(int j=1;j<a+1;j++){
+            System.out.println("Lopping-"+j);
+        }
+    }
+}
